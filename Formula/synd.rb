@@ -4,17 +4,17 @@ class Synd < Formula
   on_macos do
     on_arm do
       url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.4/synd-term-aarch64-apple-darwin.tar.xz"
-      sha256 "a8b54455c16a88172abc760517fad9cdb29b7eea60b04a953918f397de3a9b57"
+      sha256 "3799d8bd54a146c48d3b3a1eeb393ad0d79584e97653e985deb8068824719ee6"
     end
     on_intel do
       url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.4/synd-term-x86_64-apple-darwin.tar.xz"
-      sha256 "948c4a42ce5fd9466faf84806368c760b9bc2015343ffa2c69ccbb73c075e7a8"
+      sha256 "37072d8ab479c5ac94ee19f65224e7335e9a5284be056857c2e2feddab3770ee"
     end
   end
   on_linux do
     on_intel do
       url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.4/synd-term-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b6aa2239bb9a32fc708d57cf5e63036e42864a7ff509a994c6ab4cb3a576fcd8"
+      sha256 "f6088e7fe291501b136b3c23f57a70fc71d76f0fdec730dae2cbf32ff83b9fd9"
     end
   end
   license "MIT OR Apache-2.0"
