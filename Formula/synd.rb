@@ -1,21 +1,21 @@
 class Synd < Formula
   desc "terminal feed viewer"
   homepage "https://docs.syndicationd.ymgyt.io/synd-term/"
-  version "0.1.7"
+  version "0.1.8"
   on_macos do
     on_arm do
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.7/synd-term-aarch64-apple-darwin.tar.gz"
-      sha256 "b064706c3e6e1db1a47e4926693b3cb66bb6b91133a9b8f6551d5f487fae3a6f"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.8/synd-term-aarch64-apple-darwin.tar.gz"
+      sha256 "475fc2067c1b8473b989d822f993840602d324c2472f15cbd27b0acf58f892f8"
     end
     on_intel do
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.7/synd-term-x86_64-apple-darwin.tar.gz"
-      sha256 "7162bd96b6701115ad149c7830d66128d0e3457971ee143f13ec5414641a89b6"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.8/synd-term-x86_64-apple-darwin.tar.gz"
+      sha256 "541e53cc84fc9790385b5c35cacc5c44f158308ef9104ab0f28132f4e747a0b8"
     end
   end
   on_linux do
     on_intel do
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.7/synd-term-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "91651676f326fe839a8ea883800b9e523435273f0d8a494fe9bcb2a57192fd3c"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.1.8/synd-term-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "84d0ecc82833974d5271ff18c498e3da233dea5d60804c19fde72b94c40fb0c1"
     end
   end
   license "MIT OR Apache-2.0"
