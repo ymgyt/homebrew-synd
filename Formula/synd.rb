@@ -1,21 +1,21 @@
 class Synd < Formula
   desc "terminal feed viewer"
   homepage "https://docs.syndicationd.ymgyt.io/synd-term/"
-  version "0.2.3"
+  version "0.2.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.3/synd-term-aarch64-apple-darwin.tar.gz"
-      sha256 "330641c767c01107e2f214dec759b0620125d46c8180ca4c0d46372a67a7018e"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.4/synd-term-aarch64-apple-darwin.tar.gz"
+      sha256 "f67539731429b947a7ecf68334137809f5dd9a6d81d964a1856dbf4a477c0b55"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.3/synd-term-x86_64-apple-darwin.tar.gz"
-      sha256 "1239839707cbacbf78963a22aca003e7b488e68e67ca040f8841dd6cba8f5eb4"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.4/synd-term-x86_64-apple-darwin.tar.gz"
+      sha256 "8baf2d4d46338de6fa3eccf9b7189dbd446a92ed1e874e5de90e8167c5318cb6"
     end
   end
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.3/synd-term-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1a7fafc93707ce5f75e36eee0f263e6ff5d11d5633ff7cede60d78d887c21fa7"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.2.4/synd-term-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "da2c009c24c5d80483a80589d6ac7a71ba81ec4d3a69fc8f5dd2ae15fd9de629"
     end
   end
   license "MIT OR Apache-2.0"
