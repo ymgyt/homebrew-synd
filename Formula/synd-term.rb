@@ -1,26 +1,31 @@
 class SyndTerm < Formula
   desc "terminal feed viewer"
   homepage "https://docs.syndicationd.ymgyt.io/synd-term/"
-  version "0.3.1"
+  version "0.3.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.1/synd-term-aarch64-apple-darwin.tar.gz"
-      sha256 "57090a8bbf29d5edd9ba8df509f74a4740e32ff1f3c6362133fa2bed21a90fb7"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.2/synd-term-aarch64-apple-darwin.tar.gz"
+      sha256 "ef9e2ee5955f2324fa0af238c6c434d284c7be22a7dfc049902d0ae848ba852d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.1/synd-term-x86_64-apple-darwin.tar.gz"
-      sha256 "d67698c17bc12d0c1e8b3883f2e93ef2ffd78eaef4afbd8b1df82a74c4375660"
+      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.2/synd-term-x86_64-apple-darwin.tar.gz"
+      sha256 "29d0c303986adc368b2561dd28e179b1fc9de94647ac18475caad97b43abb2f5"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.1/synd-term-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "227dfb30b624f5de5e8ed8745996837556845929f8393f0fb1c6d1e4927f213e"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/ymgyt/syndicationd/releases/download/synd-term-v0.3.2/synd-term-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "cbed7b52ad010f1db1944b351680f240d6ba2fc8431b49f4c5bb045ce8084b98"
   end
-  license "MIT OR Apache-2.0"
+  license any_of: ["MIT", "Apache-2.0"]
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":              {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -38,15 +43,9 @@ class SyndTerm < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "synd"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "synd"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "synd"
-    end
+    bin.install "synd" if OS.mac? && Hardware::CPU.arm?
+    bin.install "synd" if OS.mac? && Hardware::CPU.intel?
+    bin.install "synd" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
